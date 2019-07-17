@@ -1,0 +1,18 @@
+<template>
+    <div>
+        日历
+    </div>
+</template>
+
+<script>
+export default {
+  name: 'Calendar',
+  data () {
+    return {
+    }
+  }
+}
+</script>
+
+<style scoped>
+</style>
