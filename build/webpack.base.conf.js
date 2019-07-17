@@ -52,6 +52,16 @@ module.exports = {
         include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
       },
       {
+        test: /\.(p?css|postcss)$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'postcss-loader'
+        ],
+        include: [resolve('src')],
+        exclude: /node_modules/
+      },
+      {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url-loader',
         options: {

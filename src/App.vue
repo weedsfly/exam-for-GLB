@@ -5,13 +5,13 @@
 </template>
 
 <script>
+import '@/assets/styles/base.pcss'
 export default {
   name: 'App'
 }
 </script>
 
 <style>
-html body {margin: 0; padding: 0; }
 #app {
 }
 </style>
