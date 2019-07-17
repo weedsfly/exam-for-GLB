@@ -8,7 +8,7 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Calendar',
+      name: 'Index',
       component: Calendar
     },
     {
