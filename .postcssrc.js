@@ -8,7 +8,7 @@ module.exports = {
     "autoprefixer": {},
     "postcss-nested": {},
     "postcss-px2rem-exclude": {
-      remUnit: 75,
+      remUnit: 100,
       exclude: /node_modules/i
     },
     "cssnano": {
