@@ -1,0 +1,74 @@
+.m-calendar {
+  background: #fff;
+  .m-week-header {
+    position: relative;
+    display: flex;
+    box-sizing: border-box;
+    font-size: 14px;
+    .m-week-day {
+      flex: 1;
+      text-align: center;
+      line-height: 40px;
+      color: #ccc;
+    }
+  }
+  .m-months-container {
+    position: relative;
+    box-sizing: border-box;
+    height: 220px;
+    overflow: hidden;
+    .m-months-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      .m-months {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        will-change: transform;
+        .m-row {
+          position: relative;
+          display: flex;
+          height: 44px;
+          .m-day {
+            line-height: 30px;
+            font-size: 18px;
+            width: calc(100% / 7);
+            text-align: center;
+            cursor: pointer;
+            tap-highlight-color: transparent;
+            .m-day-num {
+              width: 40px;
+              height: 40px;
+              line-height: 40px;
+              display: inline-block;
+              border-radius: 100%;
+            }
+            .m-grey {
+              color: #b8b8b8;
+              visibility: hidden;
+            }
+            .m-today {
+              border: 1px solid #2a579a;
+              border-radius: 100%;
+              color: #2a579a;
+            }
+            .m-disable {
+              color: #b8b8b8;
+              text-decoration: line-through;
+            }
+            .m-select {
+              background: #2a579a;
+              border: 1px solid #2a579a;
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+}
