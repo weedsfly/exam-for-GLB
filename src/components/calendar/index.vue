@@ -1,12 +1,16 @@
 <template>
     <div>
-        日历
+        <Tabbar/>
     </div>
 </template>
 
 <script>
+import Tabbar from './Tabbar'
 export default {
   name: 'Calendar',
+  components: {
+    Tabbar
+  },
   data () {
     return {
     }
