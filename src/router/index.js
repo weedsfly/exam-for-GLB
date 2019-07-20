@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Calendar from '@/components/calendar/index'
+import Calendar from '@/components/calendar/Index'
+import Clock from '@/components/clock/Index'
 
 Vue.use(Router)
 
@@ -15,6 +16,11 @@ export default new Router({
       path: '/calendar',
       name: 'Calendar',
       component: Calendar
+    },
+    {
+      path: '/clock',
+      name: 'Clock',
+      component: Clock
     }
   ]
 })

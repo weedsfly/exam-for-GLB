@@ -6,6 +6,7 @@ module.exports = {
     "postcss-url": {},
     // to edit target browsers: use "browserslist" field in package.json
     "autoprefixer": {},
+    "postcss-advanced-variables": {},
     "postcss-nested": {},
     "postcss-px2rem-exclude": {
       remUnit: 100,
