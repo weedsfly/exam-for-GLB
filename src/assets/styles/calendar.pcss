@@ -66,6 +66,20 @@
               border: 1px solid #2a579a;
               color: #fff;
             }
+            .m-mark {
+              position: relative;
+              &::after {
+                content: '';
+                display: block;
+                width: 6px; /*no*/
+                height: 6px; /*no*/
+                background: #f90;
+                border-radius: 50%;
+                position: absolute;
+                bottom: 3px;
+                left: 17px;
+              }
+            }
           }
         }
       }

@@ -43,36 +43,6 @@ const dateList = [{
   subTitle: '招新人',
   role: 1,
   time: '10-28'
-}, {
-  id: '001',
-  title: '227市场',
-  subTitle: '定价依据和客户判定',
-  role: 1,
-  time: '16:24'
-}, {
-  id: '002',
-  title: '新软件',
-  subTitle: '成立体验小组，测试软件',
-  role: 2,
-  time: '13:34'
-}, {
-  id: '003',
-  title: '2-3-6手提项目',
-  subTitle: '236手提灭火器项目，10月需要提交给需求方',
-  role: 2,
-  time: '09:24'
-}, {
-  id: '004',
-  title: '消防资格考试',
-  subTitle: '考试纲要 考试时间 考试地点',
-  role: 1,
-  time: '昨天'
-}, {
-  id: '005',
-  title: '总裁办招新',
-  subTitle: '招新人',
-  role: 1,
-  time: '10-28'
 }]
 export default {
   name: 'InfoList',

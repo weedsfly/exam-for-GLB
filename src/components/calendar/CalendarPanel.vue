@@ -8,7 +8,7 @@
         <Calendar ref="calendar" :isWeekMode="showWeek" @change="getSelectDate"/>
       </div>
       <div class="navbar" @touchstart="touchstart" @touchmove="touchmove">
-        <i class="icon-arrow up"></i>
+        <i class="icon-arrow up" :class="{down: showWeek}"></i>
         <div class="nav">
           <ul>
             <li class="isActive">已设置提醒</li>

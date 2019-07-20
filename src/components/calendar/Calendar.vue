@@ -38,7 +38,8 @@
                   'm-today': day.isToday,
                   'm-disable': day.isDisable,
                   'm-select': day.isSelect,
-                  'm-during': day.isDuring
+                  'm-during': day.isDuring,
+                  'm-mark': day.isMark
                 }">
                 {{day.value}}
               </span>
@@ -85,7 +86,8 @@
                   'm-today': day.isToday,
                   'm-disable': day.isDisable,
                   'm-select': day.isSelect,
-                  'm-during': day.isDuring
+                  'm-during': day.isDuring,
+                  'm-mark': day.isMark
                 }"
               >
                 {{day.value}}
@@ -193,7 +195,7 @@ export default {
   },
   created () {
     this.init()
-    // console.log(dayjs('2019-07-19').date())
+    // console.log(dayjs().valueOf())
   },
   methods: {
     init (date) {
@@ -281,6 +283,7 @@ export default {
     },
     // 日期点击事件
     onDayClick (day) {
+      console.log(day)
       if (!this.dayClick(day.dateTime)) {
         return
       }
@@ -438,6 +441,19 @@ export default {
         nextDate.fullWeek
       ]
     },
+    // 当前日期是否备注
+    isMark (date) {
+      let mark = false
+      let dateValue = dayjs(date).valueOf()
+      let markDate = [dayjs('2019-07-08'), dayjs('2019-07-16'), dayjs('2019-07-18'), dayjs('2019-07-22')]
+      markDate.forEach(item => {
+        let temp = dayjs(item).valueOf()
+        if (dateValue === temp) {
+          mark = true
+        }
+      })
+      return mark
+    },
     // 当前日期是否被选中
     isSelect (date) {
       let select = false
@@ -509,7 +525,8 @@ export default {
             isToday: dateTime.isSame(dayjs().startOf('day')),
             isSelect: this.isSelect(dateTime),
             isDisable: this.getIsDisable(dateTime),
-            isDuring: this.isBetting(dateTime)
+            isDuring: this.isBetting(dateTime),
+            isMark: this.isMark(dateTime)
           }
         }
         // 当月
@@ -526,7 +543,8 @@ export default {
             isToday: dateTime.isSame(dayjs().startOf('day')),
             isSelect: this.isSelect(dateTime),
             isDisable: this.getIsDisable(dateTime),
-            isDuring: this.isBetting(dateTime)
+            isDuring: this.isBetting(dateTime),
+            isMark: this.isMark(dateTime)
           }
         }
         // 下月
@@ -540,7 +558,8 @@ export default {
             isToday: dateTime.isSame(dayjs().startOf('day')),
             isSelect: this.isSelect(dateTime),
             isDisable: this.getIsDisable(dateTime),
-            isDuring: this.isBetting(dateTime)
+            isDuring: this.isBetting(dateTime),
+            isMark: this.isMark(dateTime)
           }
         }
       }
@@ -571,7 +590,8 @@ export default {
           isToday: dateTime.isSame(dayjs().startOf('day')),
           isSelect: this.isSelect(dateTime),
           isDisable: this.getIsDisable(dateTime),
-          isDuring: this.isBetting(dateTime)
+          isDuring: this.isBetting(dateTime),
+          isMark: this.isMark(dateTime)
         }
         fullWeek.push(date[i])
       }
