@@ -1,6 +1,6 @@
 <template>
     <div class="calendar-panel">
-      <div class="main" :class="{weekmode: false}">
+      <div class="main" :class="{weekmode: showWeek}">
         <div class="topbar">
           {{selectDate}}
           <span class="today" @click="changeDate">今天</span>

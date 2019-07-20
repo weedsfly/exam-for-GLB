@@ -9,7 +9,7 @@
       </div>
     </div>
     <div
-      class="m-months-container"
+      class="m-months-container weekmode"
       @touchstart="touchstart"
       @touchmove="touchmove"
       @touchend="touchend"
