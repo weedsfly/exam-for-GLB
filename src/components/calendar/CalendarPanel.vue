@@ -7,8 +7,8 @@
         </div>
         <Calendar ref="calendar" :isWeekMode="showWeek" @change="getSelectDate"/>
       </div>
-      <div class="navbar">
-        <i class="icon-arrow up" @click="showWeek=!showWeek"></i>
+      <div class="navbar" @touchstart="touchstart" @touchmove="touchmove">
+        <i class="icon-arrow up"></i>
         <div class="nav">
           <ul>
             <li class="isActive">已设置提醒</li>
@@ -23,6 +23,8 @@
 <script>
 import dayjs from 'dayjs'
 import Calendar from './Calendar'
+let startX, startY, moveEndX, moveEndY, X, Y
+
 export default {
   name: 'CalendarPanel',
   components: {
@@ -42,6 +44,23 @@ export default {
     getSelectDate (date) {
       // console.log(date)
       this.selectDate = dayjs(date).format('YYYY-MM-DD')
+    },
+    touchstart (e) {
+      // e.preventDefault()
+      startX = e.touches[0].pageX
+      startY = e.touches[0].pageY
+    },
+    touchmove (e) {
+      // e.preventDefault()
+      moveEndX = e.touches[0].pageX
+      moveEndY = e.touches[0].pageY
+      X = moveEndX - startX
+      Y = moveEndY - startY
+      if (Math.abs(Y) > Math.abs(X) && Y > 0) {
+        this.showWeek = false
+      } else if (Math.abs(Y) > Math.abs(X) && Y < 0) {
+        this.showWeek = true
+      }
     }
   }
 }
