@@ -58,8 +58,10 @@ export default {
       Y = moveEndY - startY
       if (Math.abs(Y) > Math.abs(X) && Y > 0) {
         this.showWeek = false
+        this.$emit('changeMode', this.showWeek)
       } else if (Math.abs(Y) > Math.abs(X) && Y < 0) {
         this.showWeek = true
+        this.$emit('changeMode', this.showWeek)
       }
     }
   }

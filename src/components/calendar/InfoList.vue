@@ -93,12 +93,14 @@ export default {
 .infolist {
     li {
       margin: 5px 10px;
-      padding: 10px;
+      padding: 5px 10px 12px;
       border-bottom: 1px solid #eee;
       position: relative;
       h3 {
         font-size: 18px;
         color: #333;
+        margin-top: 0;
+        padding-top: 0;
         .time {
           float: right;
           font-size: 12px;

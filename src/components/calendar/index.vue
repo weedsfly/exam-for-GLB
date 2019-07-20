@@ -1,7 +1,7 @@
 <template>
     <div>
-        <CalendarPanel/>
-        <InfoList/>
+        <CalendarPanel @changeMode="changeMode"/>
+        <InfoList class="marginTop" :class="{weekmode: showWeek}"/>
         <Tabbar/>
     </div>
 </template>
@@ -19,10 +19,22 @@ export default {
   },
   data () {
     return {
+      showWeek: false
+    }
+  },
+  methods: {
+    changeMode (mode) {
+      this.showWeek = mode
     }
   }
 }
 </script>
 
 <style scoped>
+.marginTop {
+  margin-top: 390px;
+  &.weekmode {
+    margin-top: 210px;
+  }
+}
 </style>
